@@ -12,7 +12,7 @@ const Login = () => {
                     <div className="mb-2 block">
                         <Label
                             htmlFor="email2"
-                            value="Your email"
+                            value="Your Email"
                         />
                     </div>
                     <TextInput
@@ -27,7 +27,7 @@ const Login = () => {
                     <div className="mb-2 block">
                         <Label
                             htmlFor="password2"
-                            value="Your password"
+                            value="Your Password"
                         />
                     </div>
                     <TextInput
