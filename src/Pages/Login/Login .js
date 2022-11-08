@@ -32,7 +32,7 @@ const Login = () => {
             })
             .catch(error => {
                 console.error(error)
-                setError(error);
+                setError(error.message);
                 toast.error('Your Email/Password is not correct')
 
             })
@@ -100,6 +100,7 @@ const Login = () => {
                 <Button onClick={handleGoogleSignIn}><FaGoogle className='mr-2' /> Login with Google</Button>
 
                 <p className='text-sm font-semibold'>Don't have any Account? <Link to='/register' className="text-blue-600 hover:underline">Register</Link> </p>
+                <p className='mt-3 text-red-600'>{error}</p>
             </form>
         </div>
     );
