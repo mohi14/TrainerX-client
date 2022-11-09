@@ -1,4 +1,3 @@
-import { data } from 'autoprefixer';
 import { Button, Label, Textarea } from 'flowbite-react';
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';

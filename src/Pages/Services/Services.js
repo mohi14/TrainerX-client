@@ -12,7 +12,7 @@ const Services = () => {
         <>
             {
                 loading ?
-                    <div className="text-center">
+                    <div className="text-center my-60">
                         <Spinner
                             aria-label="Extra large spinner example"
                             size="xl"

@@ -1,4 +1,3 @@
-import { Avatar } from 'flowbite-react';
 import React from 'react';
 
 const ReviewsCard = ({ review }) => {

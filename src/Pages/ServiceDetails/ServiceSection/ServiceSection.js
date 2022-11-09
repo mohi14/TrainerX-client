@@ -4,7 +4,7 @@ import React from 'react';
 import { FaShoppingCart } from "react-icons/fa";
 
 const ServiceSection = ({ service }) => {
-    const { _id, level, duration, total_reviews, title, details, image_url } = service;
+    const { level, duration, total_reviews, title, details, image_url } = service;
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 m-10 gap-10'>
             <div>
