@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import MyReviewsCard from '../MyReviewsCard/MyReviewsCard';
+import Swal from 'sweetalert2'
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext)
     const [reviews, setReviews] = useState([]);
+    const [confirmation, setConfirmation] = useState(false)
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?email=${user?.email}`)
@@ -14,21 +15,39 @@ const MyReviews = () => {
     }, [user?.email])
 
     const handleDelete = id => {
-        const proceed = window.confirm('Are you sure?')
-        if (proceed) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
-                method: 'DELETE',
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        toast.success('Review deleted successfully');
-                        const remaining = reviews.filter(rev => rev._id !== id);
-                        setReviews(remaining)
-                    }
+        console.log('clicked')
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/reviews/${id}`, {
+                    method: 'DELETE',
                 })
-        }
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            const remaining = reviews.filter(rev => rev._id !== id);
+                            setReviews(remaining)
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+
+            }
+        })
     }
+
     const handleUpdate = id => {
 
     }
