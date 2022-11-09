@@ -10,9 +10,11 @@ const Login = () => {
 
     const { logInUser, googleSignInUser, setLoading, user } = useContext(AuthContext)
 
-    const navigate = useNavigate();
+
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/'
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -48,7 +50,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success(`Welcome back ${user?.displayName}`)
-                navigate(from, { replace: true });
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error)
