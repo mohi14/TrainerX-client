@@ -16,7 +16,8 @@ const ReviewSection = ({ service }) => {
         fetch(`http://localhost:5000/reviews/${_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [_id])
+    }, [reviews, _id])
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -57,11 +58,17 @@ const ReviewSection = ({ service }) => {
         <div className='my-20'>
             <h1 className='w-1/2 text-center m-auto text-3xl font-semibold border-b-2 border-[#FDBF1D] pb-2'>Customer Reviews</h1>
             <div className='grid grid-cols-1 gap-3 w-3/4 lg:w-1/2 m-auto my-16'>
-                {
-                    reviews.map(review => <ReviewsCard
-                        key={review._id}
-                        review={review}
-                    ></ReviewsCard>)
+                {reviews.length > 0 ?
+                    <>
+                        {
+                            reviews.map(review => <ReviewsCard
+                                key={review._id}
+                                review={review}
+                            ></ReviewsCard>)
+                        }
+                    </>
+                    :
+                    <h2 className='text-center text-xl'>This service has no reviews</h2>
                 }
             </div>
             <div>
