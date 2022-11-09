@@ -1,13 +1,23 @@
 import { data } from 'autoprefixer';
 import { Button, Label, Textarea } from 'flowbite-react';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import ReviewsCard from './ReviewsCard';
 
 const ReviewSection = ({ service }) => {
     const { user } = useContext(AuthContext)
     const { _id, title, } = service;
+
+    const [reviews, setReviews] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews/${_id}`)
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [_id])
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -47,10 +57,18 @@ const ReviewSection = ({ service }) => {
         <div className='my-20'>
             <h1 className='w-1/2 text-center m-auto text-3xl font-semibold border-b-2 border-[#FDBF1D] pb-2'>Customer Reviews</h1>
             <div>
-
+                {
+                    reviews.map(review => <ReviewsCard
+                        key={review._id}
+                        review={review}
+                    ></ReviewsCard>)
+                }
             </div>
             <div>
                 <div className='my-10'>
+                    <div>
+
+                    </div>
                     {
                         user?.uid ? ''
                             : <>
