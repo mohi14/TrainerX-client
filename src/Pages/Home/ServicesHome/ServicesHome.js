@@ -22,11 +22,13 @@ const ServicesHome = () => {
                     ></ServicesCard>)
                 }
             </div>
-            <Button className='m-auto mt-5'
-                color={'success'}
-            >
-                <Link to="/services">View More</Link>
-            </Button>
+            <Link to="/services">
+                <Button className='m-auto mt-5'
+                    color={'success'}
+                >
+                    View More
+                </Button>
+            </Link>
         </div>
     );
 };

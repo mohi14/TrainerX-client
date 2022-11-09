@@ -1,14 +1,17 @@
 import { Button, Card } from 'flowbite-react';
 import React from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ServicesCard = ({ services }) => {
     const { _id, title, image_url, details } = services
     return (
         <div className="h-full">
-            <Card
-                imgAlt="Meaningful alt text for an image that is not purely decorative"
-                imgSrc={image_url}
-            >
+            <Card >
+                <PhotoProvider>
+                    <PhotoView key={_id} src={image_url}>
+                        <img src={image_url} alt="" className='rounded-md hover:cursor-pointer' />
+                    </PhotoView>
+                </PhotoProvider>
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     {title}
                 </h5>
