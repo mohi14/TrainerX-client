@@ -56,7 +56,7 @@ const ReviewSection = ({ service }) => {
     return (
         <div className='my-20'>
             <h1 className='w-1/2 text-center m-auto text-3xl font-semibold border-b-2 border-[#FDBF1D] pb-2'>Customer Reviews</h1>
-            <div>
+            <div className='grid grid-cols-1 gap-3 w-3/4 lg:w-1/2 m-auto my-16'>
                 {
                     reviews.map(review => <ReviewsCard
                         key={review._id}

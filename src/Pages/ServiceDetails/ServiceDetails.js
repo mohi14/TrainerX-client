@@ -10,7 +10,7 @@ const ServiceDetails = () => {
     return (
         <div>
             <ServiceSection
-                key={service._id}
+                key={service.title}
                 service={service}
             ></ServiceSection>
             <ReviewSection
