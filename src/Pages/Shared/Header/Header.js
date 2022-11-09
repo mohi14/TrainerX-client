@@ -19,9 +19,9 @@ const Header = () => {
         <div>
             <Navbar className='header text-white font-bold bg-transparent'>
                 <Navbar.Brand className='pl-5 lg:pl-20 lg:py-4'>
-                    <div className='text-3xl'>
+                    <Link to="/"> <div className='text-3xl'>
                         Trainer<span className='font-caveat text-[45px] text-[#FDBF1D]'>X</span>
-                    </div>
+                    </div></Link>
                 </Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse
