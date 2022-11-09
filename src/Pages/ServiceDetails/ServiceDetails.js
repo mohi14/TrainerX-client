@@ -1,9 +1,17 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import ServiceSection from './ServiceSection/ServiceSection';
 
 const ServiceDetails = () => {
+    const service = useLoaderData()
+    console.log(service)
+
     return (
         <div>
-            <h1>service details</h1>
+            <ServiceSection
+                key={service._id}
+                service={service}></ServiceSection>
+
         </div>
     );
 };
