@@ -50,7 +50,6 @@ const ReviewSection = ({ service }) => {
                 }
             })
             .catch(error => console.error(error))
-        console.log(review)
 
     }
     return (
