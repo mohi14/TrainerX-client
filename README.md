@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# TrainerX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Website [https://tranierx-ffff7.web.app/](https://tranierx-ffff7.web.app/).
 
-## Available Scripts
 
-In the project directory, you can run:
+### Welcome to my github repo. This is a gym trainer website.
 
-### `npm start`
+* This website provides different types of gym services. Customer can see all the services available on the services page.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Each services have a view details button. By clicking it will take visitor to the details page of the selected service.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* On the services details page there are two section. One is about the details of the service and another one is about the review section.
 
-### `npm test`
+* If visitor is not log in to the page he/she can't write any review. After log in to the website he will get the ability to comments about the selected service.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* There is a My reviews page where logged in customer can see all of his/her comments on different services. He/She can also edit and delete the comments.
 
-### `npm run build`
+* A logged in person also can add any service to the website in Add service page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* This is a MERN stack web development. And some others features also used to build this website, like..
+     * Strong and wonderful css framework called tailwind CSS is used to        beautify this website as well as it makes this website responsive.
+     * Flowbite a component library of tailwind also used.
+     * Authentication system and hosting is done by the help of Firebase.
+     * Some icons of this website are grabbed from React-icons.
+     * React-hot-toast and SweetAler2 are used for warning and successful alert.
+     * BackEnd server hosted in vercel.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

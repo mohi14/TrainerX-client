@@ -15,12 +15,12 @@ const Tips = () => {
                     <p className='text-center mb-6 text-lg'>How all this mistaken idea of denouncing pleasures and praising our work.</p>
                 </div>
                 <div className='border-2 p-4 rounded-lg hover:border-green-700'>
-                    <img src={logo2} alt="" className='w-[80px] m-auto mt-10 mb-5 ' />
+                    <img src={logo3} alt="" className=' w-[130px] m-auto mt-10 mb-7 ' />
                     <h4 className='text-center text-xl font-bold mb-4'>Exercise Regularly</h4>
                     <p className='text-center mb-6 text-lg'>Complete account of system & expounds the actually master explorer.</p>
                 </div>
                 <div className='border-2 p-4 rounded-lg hover:border-green-700'>
-                    <img src={logo3} alt="" className='w-[130px] m-auto mt-10 mb-5 ' />
+                    <img src={logo2} alt="" className=' w-[80px] m-auto mt-10 mb-5 ' />
                     <h4 className='text-center text-xl font-bold mb-4'>Avoiding Bad Habits</h4>
                     <p className='text-center mb-6 text-lg'>Expounds the actual teaching that great explorer of there level on builder won.</p>
                 </div>

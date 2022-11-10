@@ -11,7 +11,7 @@ const AddServices = () => {
         const title = form.title.value;
         const level = form.level.value;
         const duration = form.duration.value;
-        const total_reviews = form.views.value;
+        const price = form.price.value;
         const image_url = form.photo.value;
         const details = form.details.value;
 
@@ -19,12 +19,12 @@ const AddServices = () => {
             title,
             level,
             duration,
-            total_reviews,
+            price,
             image_url,
             details
         }
 
-        fetch('http://localhost:5000/services', {
+        fetch(' https://trainerx-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -121,15 +121,15 @@ const AddServices = () => {
                 <div>
                     <div className="mb-2 block">
                         <Label
-                            htmlFor="views2"
-                            value="Total views"
+                            htmlFor="price2"
+                            value="Total price"
                         />
                     </div>
                     <TextInput
-                        id="views2"
+                        id="price2"
                         type="number"
-                        placeholder="Put total views"
-                        name='views'
+                        placeholder="Put price"
+                        name='price'
                         required={true}
                         shadow={true}
                     />

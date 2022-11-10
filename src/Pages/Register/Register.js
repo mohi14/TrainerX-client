@@ -31,7 +31,7 @@ const Register = () => {
                     email: user.email
                 }
                 //get jwt token
-                fetch('http://localhost:5000/jwt', {
+                fetch(' https://trainerx-server.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

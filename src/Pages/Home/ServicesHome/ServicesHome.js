@@ -10,7 +10,7 @@ const ServicesHome = () => {
     const { loading, setLoading } = useContext(AuthContext)
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/servicesHome')
+        fetch(' https://trainerx-server.vercel.app/servicesHome')
             .then(res =>
                 res.json()
             )

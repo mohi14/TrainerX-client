@@ -12,7 +12,7 @@ const MyReviews = () => {
     console.log(reviews)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+        fetch(` https://trainerx-server.vercel.app/reviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('genius-Token')}`
             }
@@ -43,7 +43,7 @@ const MyReviews = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/reviews/${id}`, {
+                fetch(` https://trainerx-server.vercel.app/reviews/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -76,7 +76,7 @@ const MyReviews = () => {
 
         if (text) {
             // Swal.fire(text)
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(` https://trainerx-server.vercel.app/reviews/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'
