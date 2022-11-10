@@ -101,7 +101,7 @@ const MyReviews = () => {
             <h1 className='text-center text-3xl font-semibold border-b-2 border-[#FDBF1D] my-10 m-auto w-3/4 lg:w-1/4 pb-2'>Your Reviews</h1>
             <div className='grid grid-cols-1 gap-4 my-16'>
                 {
-                    reviews ?
+                    reviews.length > 0 ?
                         <>
                             {
                                 reviews.map(review => <MyReviewsCard
