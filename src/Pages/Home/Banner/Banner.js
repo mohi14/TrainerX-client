@@ -6,7 +6,7 @@ const Banner = () => {
     return (
         <div>
             <div className="h-56 lg:h-[600px]">
-                <Carousel>
+                <Carousel >
                     <div className='relative'>
                         <img
                             src="https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=773&q=80"

@@ -22,7 +22,7 @@ const ServicesHome = () => {
 
     return (
         <div className='my-10'>
-            <h2 className='text-3xl font-bold ml-10 lg:ml-16 my-5'>Services</h2>
+            <h2 className='text-3xl font-bold ml-10 lg:ml-16 my-7 text-center'>Services</h2>
             {
                 loading ?
                     <div className="text-center my-60">
