@@ -1,14 +1,16 @@
-import { Button, Label, TextInput, Toast } from 'flowbite-react';
+import { Button, Label, TextInput } from 'flowbite-react';
 import React, { useContext, useState } from 'react';
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import useTitle from '../../others/useTitle/useTitle';
 
 const Login = () => {
+    useTitle('Login')
     const [error, setError] = useState('')
 
-    const { logInUser, googleSignInUser, setLoading, user } = useContext(AuthContext)
+    const { logInUser, googleSignInUser, setLoading } = useContext(AuthContext)
 
 
     const location = useLocation();
@@ -25,12 +27,24 @@ const Login = () => {
         logInUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
-                form.reset();
-                setError('');
-                toast.success(`Welcome back ${user?.displayName}`)
-                navigate(from, { replace: true });
 
+                const currentUser = {
+                    email: user.email
+                }
+                //get jwt token
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('trainerX-Token', data.token)
+                        navigate(from, { replace: true });
+                        toast.success(`Welcome back ${user?.displayName}`)
+                    })
             })
             .catch(error => {
                 console.error(error)
@@ -49,8 +63,24 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-                toast.success(`Welcome back ${user?.displayName}`)
-                navigate(from, { replace: true })
+
+                const currentUser = {
+                    email: user.email
+                }
+                //get jwt token
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('trainerX-Token', data.token)
+                        navigate(from, { replace: true });
+                        toast.success(`Welcome back ${user?.displayName}`)
+                    })
             })
             .catch(error => {
                 console.error(error)

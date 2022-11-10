@@ -1,8 +1,10 @@
 import { Button, Label, Select, Textarea, TextInput } from 'flowbite-react';
 import React from 'react';
 import toast from 'react-hot-toast';
+import useTitle from '../../others/useTitle/useTitle';
 
 const AddServices = () => {
+    useTitle('Add Services')
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -40,7 +42,7 @@ const AddServices = () => {
             .catch(error => console.error(error))
     }
     return (
-        <div className='m-auto w-3/4 px-16 py-10 border-2 mb-20 mt-5 rounded-lg shadow-md'>
+        <div className='m-auto w-10/12 lg:w-3/4 px-6 lg:px-16 py-10 border-2 mb-20 mt-5 rounded-lg shadow-md'>
             <h2 className='text-2xl font-semibold mb-7 border-b-2 border-[#FDBF1D] text-center w-3/4 m-auto pb-3'>Add a new service</h2>
             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
                 <div>
@@ -166,7 +168,7 @@ const AddServices = () => {
                 </div>
 
                 <Button type="submit"
-                    className='w-1/4 m-auto mt-5'
+                    className='lg:w-1/4 m-auto mt-5'
                     color={'success'}>
                     Add Service
                 </Button>

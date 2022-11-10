@@ -3,8 +3,10 @@ import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import useTitle from '../../others/useTitle/useTitle';
 
 const Register = () => {
+    useTitle('Register')
     const [error, setError] = useState('')
     const { emailPasswordSignUpUser, updateUserProfile, setLoading } = useContext(AuthContext)
     const navigate = useNavigate()
@@ -25,8 +27,25 @@ const Register = () => {
                 form.reset();
                 handleUpdateUserProfile(name, photoURL)
                 setError('');
-                toast.success("Registration Successful! Thank You.")
-                navigate('/')
+                const currentUser = {
+                    email: user.email
+                }
+                //get jwt token
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('trainerX-Token', data.token)
+                        navigate('/')
+                        toast.success("Registration Successful! Thank You.")
+                    })
+
+
             })
             .catch(error => {
                 console.error(error)

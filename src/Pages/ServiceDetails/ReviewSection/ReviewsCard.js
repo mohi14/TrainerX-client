@@ -2,7 +2,7 @@ import React from 'react';
 
 const ReviewsCard = ({ review }) => {
     console.log(review)
-    const { message, userPhoto, userName } = review
+    const { message, userPhoto, userName, date } = review
 
     return (
         <div className='border flex gap-4 rounded-lg shadow-lg'>
@@ -12,6 +12,7 @@ const ReviewsCard = ({ review }) => {
             <div className='py-10'>
                 <h3 className='text-xl font-semibold'>{userName}</h3>
                 <p>{message}</p>
+                <small>{date}</small>
             </div>
         </div>
     );

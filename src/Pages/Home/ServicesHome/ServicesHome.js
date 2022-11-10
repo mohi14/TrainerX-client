@@ -2,15 +2,22 @@ import { Button, Spinner } from 'flowbite-react';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../../others/useTitle/useTitle';
 import ServicesCard from './ServicesCard';
 
 const ServicesHome = () => {
-    const { loading } = useContext(AuthContext)
+    useTitle('Home')
+    const { loading, setLoading } = useContext(AuthContext)
     const [services, setServices] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/servicesHome')
-            .then(res => res.json())
-            .then(data => setServices(data))
+            .then(res =>
+                res.json()
+            )
+            .then(data => {
+                setServices(data)
+                setLoading(false)
+            })
     }, [])
 
     return (

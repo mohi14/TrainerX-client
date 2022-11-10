@@ -2,9 +2,11 @@ import { Spinner } from 'flowbite-react';
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../others/useTitle/useTitle';
 import ServicesCard from '../Home/ServicesHome/ServicesCard';
 
 const Services = () => {
+    useTitle('Services')
     const { loading } = useContext(AuthContext)
     const services = useLoaderData();
 
